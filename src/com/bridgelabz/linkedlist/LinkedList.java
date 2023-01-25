@@ -81,11 +81,26 @@ public class LinkedList {
 		head = head.next;
 	}
 
+		//delete last element
+	public void deletelast() {
+		if (head == null)
+			System.out.println("List is empty");
+		else if (head.next == null)
+			head = null;
+		else {
+			Node temp = head;
+			while (temp.next.next != null) {
+				temp = temp.next;
+			}
+			temp.next = null;
+		}
+	}
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
 		System.out.println("Welcome to Linked List Problem");
-		Scanner scanner = new Scanner(System.in);  //create an object
+		Scanner scanner = new Scanner(System.in); // create an object
 		System.out.println("Adding Nodes At First");
 		list.addFirst(70);
 		list.display();
@@ -95,7 +110,7 @@ public class LinkedList {
 		int position = scanner.nextInt();
 		list.addPosition(30, position);
 		list.display();
-		
+
 		list.deleteFirst();
 		list.display();
 		list.deleteFirst();

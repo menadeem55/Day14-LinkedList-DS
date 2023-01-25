@@ -76,12 +76,16 @@ public class LinkedList {
 		}
 	}
 
+	// Delete position
+	public void deleteFirst() {
+		head = head.next;
+	}
+
 	public static void main(String[] args) {
 
 		LinkedList list = new LinkedList();
-
 		System.out.println("Welcome to Linked List Problem");
-		Scanner scanner = new Scanner(System.in); // create an object
+		Scanner scanner = new Scanner(System.in);  //create an object
 		System.out.println("Adding Nodes At First");
 		list.addFirst(70);
 		list.display();
@@ -90,6 +94,11 @@ public class LinkedList {
 		System.out.println("Enter Position Number To Add:- ");
 		int position = scanner.nextInt();
 		list.addPosition(30, position);
+		list.display();
+		
+		list.deleteFirst();
+		list.display();
+		list.deleteFirst();
 		list.display();
 
 	}
